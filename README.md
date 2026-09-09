@@ -115,4 +115,26 @@ ExpenseTracker_javaswing/
 
 Database connectivity is handled in db/DBConnection.java, which connects to a local MySQL instance (jdbc:mysql://localhost:3306/expense_tracker) using JDBC.h
 
+Login?Register Window
 <img width="594" height="729" alt="Screenshot 2026-09-09 221944" src="https://github.com/user-attachments/assets/79335cc7-ee6b-4da0-9c21-3ea50bde58bd" />
+
+Dashboard
+<img width="596" height="732" alt="Screenshot 2026-09-09 223034" src="https://github.com/user-attachments/assets/3fff53d4-c40a-4eff-9d63-fcac10918b46" />
+
+Income Management
+<img width="839" height="665" alt="Screenshot 2026-09-09 223149" src="https://github.com/user-attachments/assets/20a7342c-3560-4abd-8988-2927768e7fbe" />
+
+Expense Management
+<img width="1234" height="804" alt="Screenshot 2026-09-09 223344" src="https://github.com/user-attachments/assets/7e6f3421-bb66-4acf-ad2f-f535fab2049d" />
+
+Analytics
+<img width="1027" height="792" alt="Screenshot 2026-09-09 223447" src="https://github.com/user-attachments/assets/84700fd5-1f65-4a1c-b72a-df24a2764b22" />
+
+<img width="1027" height="788" alt="Screenshot 2026-09-09 223523" src="https://github.com/user-attachments/assets/1a0f96ba-8949-4114-9c52-d75a3123080e" />
+
+Profile
+<img width="719" height="795" alt="Screenshot 2026-09-09 223606" src="https://github.com/user-attachments/assets/d77bb8a8-974b-4b35-ba25-cfb5c89d190a" />
+
+
+
+
