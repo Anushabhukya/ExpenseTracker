@@ -63,8 +63,7 @@ The MySQL schema (database/schema.sql) defines the following tables:
 - budgets – budget_id, user_id, category_id, budget_amount, budget_month
 
  Project Structure
-
-
+```
 ExpenseTracker_javaswing/
 │
 ├── database/
@@ -102,7 +101,7 @@ ExpenseTracker_javaswing/
         ├── ProfileService.java
         └── AnalyticsService.java
 
-
+```
  Application Flow
 
 1. Main.java launches LoginFrame.
@@ -116,6 +115,7 @@ ExpenseTracker_javaswing/
 Database connectivity is handled in db/DBConnection.java, which connects to a local MySQL instance (jdbc:mysql://localhost:3306/expense_tracker) using JDBC.h
 
 Login?Register Window
+
 <img width="300" height="400" alt="Screenshot 2026-09-09 221944" src="https://github.com/user-attachments/assets/79335cc7-ee6b-4da0-9c21-3ea50bde58bd" />
 
 
