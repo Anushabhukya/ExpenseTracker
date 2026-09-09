@@ -122,23 +122,27 @@ Login?Register Window
 
 
 Dashboard
+
 <img width="120" height="200" alt="Screenshot 2026-09-09 223034" src="https://github.com/user-attachments/assets/3fff53d4-c40a-4eff-9d63-fcac10918b46" />
 
 
 
 
 Income Management
+
 <img width="100" height="100" alt="Screenshot 2026-09-09 223149" src="https://github.com/user-attachments/assets/20a7342c-3560-4abd-8988-2927768e7fbe" />
 
 
 
 
 Expense Management
+
 <img width="200" height="250" alt="Screenshot 2026-09-09 223344" src="https://github.com/user-attachments/assets/7e6f3421-bb66-4acf-ad2f-f535fab2049d" />
 
 
 
 Analytics
+
 <img width="300" height="366" alt="Screenshot 2026-09-09 223447" src="https://github.com/user-attachments/assets/84700fd5-1f65-4a1c-b72a-df24a2764b22" />
 
 
@@ -148,7 +152,8 @@ Analytics
 
 
 Profile
-<img width="719" height="795" alt="Screenshot 2026-09-09 223606" src="https://github.com/user-attachments/assets/d77bb8a8-974b-4b35-ba25-cfb5c89d190a" />
+
+<img width="100" height="112" alt="Screenshot 2026-09-09 223606" src="https://github.com/user-attachments/assets/d77bb8a8-974b-4b35-ba25-cfb5c89d190a" />
 
 
 
