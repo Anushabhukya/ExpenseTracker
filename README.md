@@ -1,136 +1,118 @@
-\# Expense Tracker
+ Expense Tracker
+
+A Java Swing application for tracking personal income and expenses, using MySQL (via JDBC) for data storage. It lets a user register, log in, record income and expenses, view them by category, day, month, or year, see a financial summary, and visualize spending through charts.
+
+ Features
+
+ Authentication
+- User registration with name, email, and password (email must be unique).
+- Login with email and password.
+- Registration form validates that all fields are filled and that the password and confirm-password fields match.
+- Login form validates that email and password are not empty.
+- Logged-in user is tracked in-memory for the duration of the session.
+
+ Dashboard
+- Central dashboard screen shown after login, with navigation buttons to Income, Expenses, Analytics, and Profile, plus Logout.
+- Live date/time display that updates every second.
+
+ Income Management
+- Add income with an amount and a source.
+- View all recorded income entries with a running total.
+
+ Expense Management
+- Add an expense by selecting a category (Food, Travel, Groceries, Bills, Entertainment, Others), entering an amount, and a description.
+- View expenses filtered by:
+  - All expenses
+  - A specific category
+  - A specific day
+  - A specific month
+  - A specific year
+- Each view displays the matching records along with the total amount for that view.
+
+ Profile
+- Displays the logged-in user's name, user ID, and email.
+- Shows a financial summary: total income, total expenses, and current balance (income − expenses), with the balance highlighted differently depending on whether it is positive or negative.
+
+ Analytics
+- Dedicated analytics screen with tabbed views:
+  - Category – spending breakdown by category, rendered as a pie chart.
+  - Daily – spending by day, rendered as a chart.
+  - Monthly – spending by month, rendered as a chart.
+  - Yearly – spending by year, rendered as a chart.
+- Charts are custom-drawn using Java 2D graphics from live data aggregated (via SQL SUM/GROUP BY) from the database.
+
+ Balance Screen
+- A standalone Balance screen (BalanceFrame) is included in the codebase for displaying balance information.
+
+ Technologies Used
+
+- Java
+- Java Swing (GUI)
+- JDBC
+- MySQL
+- MySQL Connector/J (mysql-connector-j-9.7.0.jar)
+
+ Database Schema
+
+The MySQL schema (database/schema.sql) defines the following tables:
+
+- users – user_id, name, email, password, created_at
+- categories – category_id, user_id, category_name
+- income – income_id, user_id, amount, source, income_date
+- expenses – expense_id, user_id, category_id, amount, description, expense_date
+- budgets – budget_id, user_id, category_id, budget_amount, budget_month
+
+ Project Structure
 
 
-
-A desktop-based Expense Tracker application developed using Java and Java Swing, with MySQL database integration using JDBC.
-
-
-
-The application allows users to manage their income and expenses, track their financial balance, categorize spending, and analyze expenses through daily, monthly, yearly, and category-wise visualizations.
-
-
-
-\## Features
-
-
-
-\- User Registration and Login
-
-\- Income Management
-
-\- Expense Management
-
-\- Expense Categorization
-
-\- Daily Expense Tracking
-
-\- Monthly Expense Tracking
-
-\- Yearly Expense Tracking
-
-\- Financial Balance Summary
-
-\- User Profile
-
-\- Category-wise Expense Analytics
-
-\- Daily Expense Analytics
-
-\- Monthly Expense Analytics
-
-\- Yearly Expense Analytics
-
-\- Interactive Java Swing GUI
-
-
-
-\## Technologies Used
-
-
-
-\- \*\*Java\*\*
-
-\- \*\*Java Swing\*\*
-
-\- \*\*JDBC\*\*
-
-\- \*\*MySQL\*\*
-
-\- \*\*MySQL Workbench\*\*
-
-\- \*\*Git \& GitHub\*\*
-
-
-
-\## Project Structure
-
-
-
-```text
-
-Expense-Tracker-Java/
-
+ExpenseTracker_javaswing/
 │
-
 ├── database/
-
 │   └── schema.sql
-
 │
-
 ├── lib/
-
 │   └── mysql-connector-j-9.7.0.jar
-
 │
-
 └── src/
+    ├── Main.java
+    │
+    ├── dao/
+    │   ├── ExpenseDAO.java
+    │   ├── IncomeDAO.java
+    │   └── UserDAO.java
+    │
+    ├── db/
+    │   ├── DBConnection.java
+    │   └── Session.java
+    │
+    ├── gui/
+    │   ├── LoginFrame.java
+    │   ├── RegisterFrame.java
+    │   ├── DashboardFrame.java
+    │   ├── IncomeFrame.java
+    │   ├── ExpenseFrame.java
+    │   ├── AnalyticsFrame.java
+    │   ├── ProfileFrame.java
+    │   └── BalanceFrame.java
+    │
+    └── service/
+        ├── DashboardService.java
+        ├── ExpenseService.java
+        ├── IncomeService.java
+        ├── ProfileService.java
+        └── AnalyticsService.java
 
-&#x20;   ├── dao/
 
-&#x20;   │   ├── ExpenseDAO.java
+ Application Flow
 
-&#x20;   │   ├── IncomeDAO.java
+1. Main.java launches LoginFrame.
+2. From the login screen, a user can log in or navigate to RegisterFrame to create an account.
+3. On successful login, the user's ID is stored in Session and DashboardFrame opens.
+4. From the dashboard, the user can navigate to Income, Expenses, Analytics, or Profile, and back, or log out to return to the login screen.
 
-&#x20;   │   └── UserDAO.java
 
-&#x20;   │
+ Database Connection
 
-&#x20;   ├── db/
+Database connectivity is handled in db/DBConnection.java, which connects to a local MySQL instance (jdbc:mysql://localhost:3306/expense_tracker) using JDBC.h
 
-&#x20;   │   ├── DBConnection.java
-
-&#x20;   │   └── Session.java
-
-&#x20;   │
-
-&#x20;   ├── gui/
-
-&#x20;   │   ├── AnalyticsFrame.java
-
-&#x20;   │   ├── DashboardFrame.java
-
-&#x20;   │   ├── ExpenseFrame.java
-
-&#x20;   │   ├── IncomeFrame.java
-
-&#x20;   │   ├── LoginFrame.java
-
-&#x20;   │   ├── ProfileFrame.java
-
-&#x20;   │   └── RegisterFrame.java
-
-&#x20;   │
-
-&#x20;   └── service/
-
-&#x20;       ├── AnalyticsService.java
-
-&#x20;       ├── DashboardService.java
-
-&#x20;       ├── ExpenseService.java
-
-&#x20;       ├── IncomeService.java
-
-&#x20;       └── ProfileService.java
-
+<img width="594" height="729" alt="Screenshot 2026-09-09 221944" src="https://github.com/user-attachments/assets/79335cc7-ee6b-4da0-9c21-3ea50bde58bd" />
