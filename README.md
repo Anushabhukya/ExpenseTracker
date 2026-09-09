@@ -128,7 +128,7 @@ Dashboard
 
 
 Income Management
-<img width="839" height="665" alt="Screenshot 2026-09-09 223149" src="https://github.com/user-attachments/assets/20a7342c-3560-4abd-8988-2927768e7fbe" />
+<img width="500" height="500" alt="Screenshot 2026-09-09 223149" src="https://github.com/user-attachments/assets/20a7342c-3560-4abd-8988-2927768e7fbe" />
 
 
 
